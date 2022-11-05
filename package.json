@@ -1,6 +1,6 @@
 {
   "name": "imba-uni-router",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "uniapp框架封装的路由包 imba-uni-router",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
