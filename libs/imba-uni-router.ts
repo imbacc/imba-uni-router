@@ -282,6 +282,9 @@ class Router {
       if (res !== false) {
         this[nextLockSymbol] = false
         this.nextHook()
+      } else {
+        this.clearHooks()
+        this[routerAfterSymbol].call(this, this.to, this.from)
       }
     }
 
@@ -333,6 +336,7 @@ class Router {
     let t = setTimeout(() => {
       clearTimeout(t)
       clearTimeout(this[nextTimeSymbol])
+      this[nextLockSymbol] = false
       this[routerHooksListSymbol] = []
     })
   }
